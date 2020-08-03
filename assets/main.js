@@ -6,6 +6,29 @@ const Game = {
     blocked: true,
     timeFlipCard: 600,
 
+    loadGame() {
+        const game = document.getElementById('game');
+
+        const el = document.createElement('div');
+        el.classList.add('loading');
+
+        game.appendChild(el);
+
+        el.innerHTML = 'Inicializando o jogo...';
+
+        setTimeout(() => {
+            el.innerHTML = 'Sorteando as cartas...';
+        }, 2000);
+
+        setTimeout(() => {
+            el.innerHTML = 'Bora jogar!';
+        }, 3000);
+
+        setTimeout(() => {
+            this.drawGame();
+        }, 4000);
+    },
+
     generateCards() {
         for (let i = 1; i <= 10; i++) {
             this.cards = [...this.cards, { id: i, image: `./assets/images/${i}.jpg`}];
@@ -27,6 +50,8 @@ const Game = {
 
     drawGame() {
         const element = document.getElementById("game");
+
+        element.innerHTML = null;
 
         this.shuffleCards(this.cards).sort().map((card, index) => {
             const el = document.createElement('div');
@@ -88,8 +113,8 @@ const Game = {
     },
 
     init() {
+        this.loadGame();
         this.generateCards();
-        this.drawGame();
     }
 }
 

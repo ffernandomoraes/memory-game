@@ -35,6 +35,14 @@ body {
         flex-wrap: wrap;
 }
 
+.loading {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+}
+
 .card {
     width: calc((100% / 5) - 10px);
     margin: 5px;
@@ -52,7 +60,7 @@ body {
 }
 
 .card:hover:before {
-    background: #653779;
+    background-color: #653779;
 }
 
 .card.agreed {
@@ -77,15 +85,21 @@ body {
 }
 
 .card:before {
-    content: ' ';
+    content: '?';
     -webkit-transition: 0.25s linear;
     -o-transition: 0.25s linear;
     transition: 0.25s linear;
     width: 100%;
     height: 100%;
-    background: #4b215d;
+    background-color: rgb(75 33 93);
     position: absolute;
     top: 0;
     left: 0;
+    color: rgb(47 19 60);
     border-radius: 4px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    z-index: 3;
+  }
