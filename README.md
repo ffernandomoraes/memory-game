@@ -1,7 +1,7 @@
 # memory-game
 Sample Memory Game in Vanilla JS.
 
-#demo
+## demo
 https://ffernandomoraes.github.io/memory-game/
 
 <img src='https://i.ibb.co/BPN4N2K/preview-2.jpg' width='400' />
